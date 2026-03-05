@@ -7,19 +7,21 @@
 
 @page {
     size: A4;
-    margin: 40mm 25mm 30mm 25mm;
+    margin: 45mm 30mm 35mm 30mm;
 }
 
 body{
     font-family: Helvetica, Arial, sans-serif;
     color:#000;
     font-size:16px;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 .container{
     width:100%;
 }
+
+/* HEADER */
 
 .header{
     display:flex;
@@ -28,39 +30,57 @@ body{
 }
 
 .logo{
-    height:45px;
+    height:50px;
+}
+
+.recibo-info{
+    text-align:right;
+    font-size:14px;
+}
+
+.numero-recibo{
+    font-weight:700;
+}
+
+/* TITULO */
+
+.titulo-area{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-top:60px;
 }
 
 .titulo{
-    font-size:30px;
+    font-size:32px;
     font-weight:700;
     letter-spacing:1px;
-    margin-top:50px;
 }
 
 .valor{
-    font-size:26px;
+    font-size:28px;
     font-weight:700;
-    margin-top:50px;
 }
 
+/* TEXTO */
+
 .corpo{
-    margin-top:60px;
+    margin-top:70px;
     text-align:justify;
 }
 
-.corpo b{
-    font-weight:700;
-}
+/* DATA */
 
 .local-data{
-    margin-top:70px;
+    margin-top:80px;
     text-align:right;
 }
 
+/* ASSINATURA */
+
 .assinatura{
-    width:350px;
-    margin-top:100px;
+    width:360px;
+    margin-top:110px;
     margin-left:auto;
     text-align:center;
 }
@@ -74,20 +94,22 @@ body{
     font-weight:600;
 }
 
+/* RODAPÉ */
+
 .rodape{
-    margin-top:140px;
+    margin-top:150px;
     display:flex;
     justify-content:space-between;
     font-size:14px;
 }
 
 .empresa{
-    line-height:1.5;
+    line-height:1.6;
 }
 
 .contato{
     text-align:right;
-    line-height:1.5;
+    line-height:1.6;
 }
 
 .linha-final{
@@ -103,14 +125,25 @@ body{
 
 <div class="container">
 
+<!-- HEADER -->
+
 <div class="header">
 
-<img class="logo" src="{{$json.logo_url}}">
+<img class="logo" src="https://www.pivaeducacional.com.br/img/logo.png">
+
+<div class="recibo-info">
+
+<div class="numero-recibo">
+RECIBO Nº {{$json.numero_recibo}}
+</div>
 
 </div>
 
+</div>
 
-<div class="header">
+<!-- TITULO -->
+
+<div class="titulo-area">
 
 <div class="titulo">
 RECIBO
@@ -122,6 +155,7 @@ R$ {{$json.valor}}
 
 </div>
 
+<!-- TEXTO -->
 
 <div class="corpo">
 
@@ -140,6 +174,7 @@ Dou plena e geral quitação dos débitos aos quais este recibo se refere.
 
 </div>
 
+<!-- DATA -->
 
 <div class="local-data">
 
@@ -147,6 +182,7 @@ São Paulo – SP, {{$json.data}}
 
 </div>
 
+<!-- ASSINATURA -->
 
 <div class="assinatura">
 
@@ -158,6 +194,7 @@ São Paulo – SP, {{$json.data}}
 
 </div>
 
+<!-- RODAPÉ -->
 
 <div class="rodape">
 
@@ -168,16 +205,15 @@ CNPJ 23.531.405/0001-51
 
 </div>
 
-
 <div class="contato">
 
-Telefone {{$json.telefone}}<br>
-{{$json.endereco}}
+Telefone (11) 99201-9404<br>
+Rua João de Souza Dias, nº 184<br>
+CEP 04618-000 – São Paulo - SP
 
 </div>
 
 </div>
-
 
 <div class="linha-final"></div>
 
