@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+@page {
+    size: A4;
+    margin: 40mm 25mm 30mm 25mm;
+}
+
+body{
+    font-family: Helvetica, Arial, sans-serif;
+    color:#000;
+    font-size:16px;
+    line-height:1.6;
+}
+
+.container{
+    width:100%;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    height:45px;
+}
+
+.titulo{
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-top:50px;
+}
+
+.valor{
+    font-size:26px;
+    font-weight:700;
+    margin-top:50px;
+}
+
+.corpo{
+    margin-top:60px;
+    text-align:justify;
+}
+
+.corpo b{
+    font-weight:700;
+}
+
+.local-data{
+    margin-top:70px;
+    text-align:right;
+}
+
+.assinatura{
+    width:350px;
+    margin-top:100px;
+    margin-left:auto;
+    text-align:center;
+}
+
+.linha-assinatura{
+    border-top:1px solid #000;
+    margin-bottom:6px;
+}
+
+.nome{
+    font-weight:600;
+}
+
+.rodape{
+    margin-top:140px;
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+}
+
+.empresa{
+    line-height:1.5;
+}
+
+.contato{
+    text-align:right;
+    line-height:1.5;
+}
+
+.linha-final{
+    margin-top:40px;
+    border-top:1px solid #999;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<img class="logo" src="{{$json.logo_url}}">
+
+</div>
+
+
+<div class="header">
+
+<div class="titulo">
+RECIBO
+</div>
+
+<div class="valor">
+R$ {{$json.valor}}
+</div>
+
+</div>
+
+
+<div class="corpo">
+
+Recebi de <b>PIVA CONSULTORIA EDUCACIONAL EIRELI</b>, inscrita no  
+CNPJ sob o nº <b>23.531.405/0001-51</b>, a importância de  
+<b>R$ {{$json.valor}}</b> ({{$json.valor_extenso}}), referente a  
+<b>SERVIÇOS DE AULAS PARTICULARES E/OU CONSULTORIA</b>.
+
+<br><br>
+
+Totalizando <b>{{$json.horas}}</b> horas no mês <b>{{$json.mes}}</b>.
+
+<br><br>
+
+Dou plena e geral quitação dos débitos aos quais este recibo se refere.
+
+</div>
+
+
+<div class="local-data">
+
+São Paulo – SP, {{$json.data}}
+
+</div>
+
+
+<div class="assinatura">
+
+<div class="linha-assinatura"></div>
+
+<div class="nome">
+{{$json.professor}}
+</div>
+
+</div>
+
+
+<div class="rodape">
+
+<div class="empresa">
+
+<b>PIVA EDUCACIONAL CONSULTORIA</b><br>
+CNPJ 23.531.405/0001-51
+
+</div>
+
+
+<div class="contato">
+
+Telefone {{$json.telefone}}<br>
+{{$json.endereco}}
+
+</div>
+
+</div>
+
+
+<div class="linha-final"></div>
+
+</div>
+
+</body>
+</html>
