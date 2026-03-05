@@ -7,18 +7,20 @@
 
 @page {
     size: A4;
-    margin: 45mm 30mm 35mm 30mm;
+    margin: 18mm 22mm 20mm 22mm;
 }
 
 body{
     font-family: Helvetica, Arial, sans-serif;
     color:#000;
     font-size:16px;
-    line-height:1.7;
+    line-height:1.6;
+    margin:0;
 }
 
 .container{
-    width:100%;
+    max-width:700px;
+    margin:auto;
 }
 
 /* HEADER */
@@ -30,16 +32,12 @@ body{
 }
 
 .logo{
-    height:50px;
+    height:48px;
 }
 
 .recibo-info{
-    text-align:right;
     font-size:14px;
-}
-
-.numero-recibo{
-    font-weight:700;
+    font-weight:600;
 }
 
 /* TITULO */
@@ -48,39 +46,39 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:flex-end;
-    margin-top:60px;
+    margin-top:50px;
 }
 
 .titulo{
-    font-size:32px;
+    font-size:30px;
     font-weight:700;
     letter-spacing:1px;
 }
 
 .valor{
-    font-size:28px;
+    font-size:26px;
     font-weight:700;
 }
 
 /* TEXTO */
 
 .corpo{
-    margin-top:70px;
+    margin-top:60px;
     text-align:justify;
 }
 
 /* DATA */
 
 .local-data{
-    margin-top:80px;
+    margin-top:70px;
     text-align:right;
 }
 
 /* ASSINATURA */
 
 .assinatura{
-    width:360px;
-    margin-top:110px;
+    width:320px;
+    margin-top:90px;
     margin-left:auto;
     text-align:center;
 }
@@ -97,7 +95,7 @@ body{
 /* RODAPÉ */
 
 .rodape{
-    margin-top:150px;
+    margin-top:120px;
     display:flex;
     justify-content:space-between;
     font-size:14px;
@@ -113,7 +111,7 @@ body{
 }
 
 .linha-final{
-    margin-top:40px;
+    margin-top:35px;
     border-top:1px solid #999;
 }
 
@@ -132,14 +130,11 @@ body{
 <img class="logo" src="https://www.pivaeducacional.com.br/img/logo.png">
 
 <div class="recibo-info">
-
-<div class="numero-recibo">
 RECIBO Nº {{$json.numero_recibo}}
 </div>
 
 </div>
 
-</div>
 
 <!-- TITULO -->
 
@@ -154,6 +149,7 @@ R$ {{$json.valor}}
 </div>
 
 </div>
+
 
 <!-- TEXTO -->
 
@@ -174,13 +170,13 @@ Dou plena e geral quitação dos débitos aos quais este recibo se refere.
 
 </div>
 
+
 <!-- DATA -->
 
 <div class="local-data">
-
 São Paulo – SP, {{$json.data}}
-
 </div>
+
 
 <!-- ASSINATURA -->
 
@@ -193,6 +189,7 @@ São Paulo – SP, {{$json.data}}
 </div>
 
 </div>
+
 
 <!-- RODAPÉ -->
 
@@ -214,6 +211,7 @@ CEP 04618-000 – São Paulo - SP
 </div>
 
 </div>
+
 
 <div class="linha-final"></div>
 
